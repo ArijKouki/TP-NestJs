@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
   providers: [
     {
       provide: 'UUID',
-      useValue: () => uuidv4(),
+      useValue: uuidv4,
     },
   ],
   exports: ['UUID']

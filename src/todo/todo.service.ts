@@ -6,6 +6,7 @@ import { UpdateTodoDto } from "./dto/update-todo.dto";
 @Injectable()
 export class TodoService {
   constructor(@Inject('UUID') private readonly uuid: () => string) {
+    console.log(this.uuid());
   }
   todos: Todo[]=[];
   getTodos(){
