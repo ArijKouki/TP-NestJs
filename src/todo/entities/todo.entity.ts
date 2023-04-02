@@ -1,8 +1,13 @@
+import { TodoStatusEnum } from "./TodoStatusEnum";
+
 export class Todo{
   id: string;
+
   name: string;
+
   description:string;
-  dateCreation: string;
+
+  createdAt: string;
   status: TodoStatusEnum;
 
   constructor(
@@ -11,10 +16,10 @@ export class Todo{
     description: string,
     status: TodoStatusEnum = TodoStatusEnum.waiting
   ) {
-    this.id = id;
+    this.id=id;
     this.name = name;
     this.description = description;
-    this.dateCreation= new Date().toLocaleDateString('fr-FR',
+    this.createdAt= new Date().toLocaleDateString('fr-FR',
       {year: 'numeric',
         month: 'numeric',
         day: 'numeric',
@@ -26,8 +31,3 @@ export class Todo{
 
 }
 
-export enum TodoStatusEnum{
-  'actif' = 'en cours',
-  'waiting' = 'en attente',
-  'done' = 'finalisé'
-}
